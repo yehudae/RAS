@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="lib" path="lib/zmq.jar"/>
+	<classpathentry kind="lib" path="lib/rsdk.jar" sourcepath="/RSDK"/>
+	<classpathentry kind="lib" path="lib/ram.jar" sourcepath="/RAM"/>
+	<classpathentry kind="lib" path="lib/jmq.jar"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

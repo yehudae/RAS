@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="lib" path="lib/zmq.jar" sourcepath="/home/yehudae/workspace/jzmq"/>
+	<classpathentry kind="lib" path="lib/jmq.jar" sourcepath="/home/yehudae/workspace/JeroMQ"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
