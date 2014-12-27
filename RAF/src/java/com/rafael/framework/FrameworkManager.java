@@ -24,52 +24,125 @@ import com.rafael.sdk.middleware.MwSubscriber;
 import com.rafael.sdk.middleware.jmq.JmqMiddleware;
 import com.rafael.sdk.util.NormalThreadFactory;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FrameworkManager.
+ */
 public class FrameworkManager implements FrameworkManagerMBean{
 	
+	/** The Constant XML_ELEMENT_SERVICES. */
 	private static final String XML_ELEMENT_SERVICES 			 = "Services";	
+	
+	/** The Constant XML_ELEMENT_SERVICE. */
 	private static final String XML_ELEMENT_SERVICE 			 = "Service";
+	
+	/** The Constant XML_ELEMENT_DEVICES. */
 	private static final String XML_ELEMENT_DEVICES 			 = "Devices";
+	
+	/** The Constant XML_ELEMENT_DEVICE. */
 	private static final String XML_ELEMENT_DEVICE 				 = "Device";
+	
+	/** The Constant XML_ELEMENT_CONNECTION. */
 	private static final String XML_ELEMENT_CONNECTION			 = "Connection";
+	
+	/** The Constant XML_ELEMENT_APPLICATIONS. */
 	private static final String XML_ELEMENT_APPLICATIONS		 = "Applications";
+	
+	/** The Constant XML_ELEMENT_CONFIGURATION_FILE. */
 	private static final String XML_ELEMENT_CONFIGURATION_FILE 	 = "ConfigurationFile";
 
+	/** The Constant XML_ATTRIBUTE_CLASS_NAME. */
 	private static final String XML_ATTRIBUTE_CLASS_NAME		 = "className";
+	
+	/** The Constant XML_ATTRIBUTE_UP_CONNECTION. */
 	private static final String XML_ATTRIBUTE_UP_CONNECTION		 = "upConnection";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_CONNECTION. */
 	private static final String XML_ATTRIBUTE_DOWN_CONNECTION	 = "downConnection";
+	
+	/** The Constant XML_ATTRIBUTE_DIR. */
 	private static final String XML_ATTRIBUTE_DIR				 = "dir";
+	
+	/** The Constant XML_ATTRIBUTE_DIR_UP. */
 	private static final String XML_ATTRIBUTE_DIR_UP			 = "up";
+	
+	/** The Constant XML_ATTRIBUTE_DIR_DOWN. */
 	private static final String XML_ATTRIBUTE_DIR_DOWN			 = "down";	
 	
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILENAME. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILENAME	 = "loggerFilename";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILE_SIZE. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILE_SIZE	 = "loggerFileSize";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILE_COUNT. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILE_COUNT	 = "loggerFileCount";
 
+	/** The Constant XML_ATTRIBUTE_LOGGER_SOCKET_HOST. */
 	private static final String XML_ATTRIBUTE_LOGGER_SOCKET_HOST = "loggerSocketHost";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_SOCKET_PORT. */
 	private static final String XML_ATTRIBUTE_LOGGER_SOCKET_PORT = "loggerSocketPort";	
 
+	/** The Constant XML_ATTRIBUTE_LOGGER_PRIORITY. */
 	private static final String XML_ATTRIBUTE_LOGGER_PRIORITY	 = "loggerPriority";	
 
+	/** The Constant XML_ATTRIBUTE_APPLICATIONS_FILENAME. */
 	private static final String XML_ATTRIBUTE_APPLICATIONS_FILENAME = "name";	
 
+	/** The Constant XML_ATTRIBUTE_UP_ASYNC_HANDLER_THREAD_COUNT. */
 	private static final String XML_ATTRIBUTE_UP_ASYNC_HANDLER_THREAD_COUNT  			= "upAsyncHandlerThreadCount";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_COUNT. */
 	private static final String XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_COUNT  			= "downAsyncHandlerThreadCount";
+	
+	/** The Constant XML_ATTRIBUTE_UP_ASYNC_HANDLER_THREAD_POOL_PRIORITY. */
 	private static final String XML_ATTRIBUTE_UP_ASYNC_HANDLER_THREAD_POOL_PRIORITY 	= "upAsyncHandlerThreadPoolPriority";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_POOL_PRIORITY. */
 	private static final String XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_POOL_PRIORITY  	= "downAsyncHandlerThreadPoolPriority";
+	
+	/** The Constant XML_ATTRIBUTE_UP_ASYNC_THREAD_PRIORITY. */
 	private static final String XML_ATTRIBUTE_UP_ASYNC_THREAD_PRIORITY 					= "upAsyncThreadPriority";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_ASYNC_THREAD_PRIORITY. */
 	private static final String XML_ATTRIBUTE_DOWN_ASYNC_THREAD_PRIORITY		 		= "downAsyncThreadPriority";
+	
+	/** The Constant XML_ATTRIBUTE_UP_SYNC_THREAD_PRIORITY. */
 	private static final String XML_ATTRIBUTE_UP_SYNC_THREAD_PRIORITY 					= "upSyncThreadPriority";
+	
+	/** The Constant XML_ATTRIBUTE_UP_SYNC_REALTIME. */
 	private static final String XML_ATTRIBUTE_UP_SYNC_REALTIME 							= "upSyncRealtime";
+	
+	/** The Constant XML_ATTRIBUTE_MIDDLEWARE. */
 	private static final String XML_ATTRIBUTE_MIDDLEWARE 								= "middleware";
 
+	/** The device manager. */
 	private ComponentManager deviceManager 	= null;
+	
+	/** The service manager. */
 	private ComponentManager serviceManager = null;
+	
+	/** The application manager. */
 	ApplicationManager applicationManager 	= null;
+	
+	/** The component descriptors. */
 	private HashMap<String, Component> componentDescriptors = null;	
+	
+	/** The activity factory. */
 	private ActivityFactory activityFactory = new DynamicActivityFactory();
+	
+	/** The fw node list. */
 	private NodeList fwNodeList;
+	
+	/** The doc element. */
 	private Element docElement;
 	
+	/**
+	 * Instantiates a new framework manager.
+	 *
+	 * @param configurationFile the configuration file
+	 */
 	public FrameworkManager(String configurationFile) {
 		deviceManager = new ComponentManager();
 		serviceManager = new ComponentManager();		
@@ -77,11 +150,21 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		open(configurationFile);
 	}		
 
+	/**
+	 * Inits the.
+	 *
+	 * @param activityFactory the activity factory
+	 */
 	public void init(ActivityFactory activityFactory) {
 		this.activityFactory = activityFactory;
 		init();
 	}
 	
+	/**
+	 * Open.
+	 *
+	 * @param configurationFile the configuration file
+	 */
 	private void open(String configurationFile) {
 		try	{
 			// load configuration from XML file
@@ -97,6 +180,9 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 	
+	/**
+	 * Inits the.
+	 */
 	public void init() {		
 		configure();
 
@@ -110,6 +196,9 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		createApplications();
 	}
 	
+	/**
+	 * Sets the system logger.
+	 */
 	private void setSystemLogger() {
 		String loggerPriority = docElement.getAttribute(XML_ATTRIBUTE_LOGGER_PRIORITY);
 		if (!loggerPriority.isEmpty()) {
@@ -130,6 +219,9 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 	
+	/**
+	 * Sets the system middleware.
+	 */
 	private void setSystemMiddleware() {
 		String middlewareType = docElement.getAttribute(XML_ATTRIBUTE_MIDDLEWARE);
 		if (!middlewareType.isEmpty()) {
@@ -149,11 +241,17 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 
+	/**
+	 * Configure.
+	 */
 	private void configure() {
 		setSystemLogger();
 		setSystemMiddleware();
 	}
 
+	/**
+	 * Creates the applications.
+	 */
 	private void createApplications() {
 		if (null != applicationManager) {
 			applicationManager.createApplications();
@@ -161,8 +259,7 @@ public class FrameworkManager implements FrameworkManagerMBean{
 	}
 
 	/**
-	 * Create the components and their publishers
-	 * @param fwNodeList
+	 * Create the components and their publishers.
 	 */
 	private void createComponents() {
 		if((fwNodeList != null) && (fwNodeList.getLength() > 0)){
@@ -199,8 +296,7 @@ public class FrameworkManager implements FrameworkManagerMBean{
 	}
 
 	/**
-	 * Bind the components
-	 * @param fwNodeList
+	 * Bind the components.
 	 */
 	private void bindComponents() {
 		if((fwNodeList != null) && (fwNodeList.getLength() > 0)){
@@ -238,7 +334,10 @@ public class FrameworkManager implements FrameworkManagerMBean{
 
 
 	/**
-	 * Create Devices and bind them the connections 
+	 * Create Devices and bind them the connections.
+	 *
+	 * @param fwElement the fw element
+	 * @param componentType the component type
 	 */
 	private void createComponents(Node fwElement, String componentType) {
 		NodeList componentNodeList = fwElement.getChildNodes();
@@ -334,6 +433,13 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 	
+	/**
+	 * Bind components.
+	 *
+	 * @param fwElement the fw element
+	 * @param componentType the component type
+	 * @param componentManager the component manager
+	 */
 	private void bindComponents(Node fwElement, String componentType, ComponentManager componentManager) {
 		NodeList componentNodeList = fwElement.getChildNodes();
 		
@@ -445,6 +551,11 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 	
+	/**
+	 * Creates the manager.
+	 *
+	 * @param fwElement the fw element
+	 */
 	private void createManager(Node fwElement)	{
 		NodeList applicationsNodeList = fwElement.getChildNodes();
 		
@@ -459,6 +570,12 @@ public class FrameworkManager implements FrameworkManagerMBean{
 			}
 		}
 	}
+	
+	/**
+	 * Bind applications.
+	 *
+	 * @param fwElement the fw element
+	 */
 	private void bindApplications(Node fwElement)	{
 		NodeList configurationFileNodeList = fwElement.getChildNodes();
 		
@@ -474,16 +591,25 @@ public class FrameworkManager implements FrameworkManagerMBean{
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.framework.FrameworkManagerMBean#startDevice(java.lang.String)
+	 */
 	@Override
 	public void startDevice(String deviceClassName){
 		deviceManager.startComponent(deviceClassName);
 	}
 
 
+	/* (non-Javadoc)
+	 * @see com.rafael.framework.FrameworkManagerMBean#stopDevice(java.lang.String)
+	 */
 	@Override
 	public void stopDevice(String deviceClassName) {		
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.framework.FrameworkManagerMBean#loadDevice(java.lang.String, int)
+	 */
 	@Override
 	public void loadDevice(String deviceClassName, int numOfThreads) {
 		try	{

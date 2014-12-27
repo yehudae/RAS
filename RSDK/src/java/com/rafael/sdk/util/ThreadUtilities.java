@@ -2,6 +2,7 @@ package com.rafael.sdk.util;
 
 import java.lang.management.*;
 
+// TODO: Auto-generated Javadoc
 /**
  * The ThreadUtilities class provides a collection of static methods
  * for listing and finding Thread, ThreadGroup, and ThreadInfo objects.
@@ -76,10 +77,8 @@ public final class ThreadUtilities {
 	 * returned if no such group is found.  If more than one
 	 * group has the same name, the first one found is returned.
 	 *
-	 * @param	name	the thread group name to search for
-	 * @return		the thread group, or null if not found
-	 * @throws	NullPointerException
-	 * 			if the name is null
+	 * @param name the thread group name to search for
+	 * @return 	the thread group, or null if not found
 	 */
 	public static ThreadGroup getThreadGroup(final String name) {
 		if (name == null) {
@@ -120,10 +119,8 @@ public final class ThreadUtilities {
 	 * Get a list of all threads in a thread group.  An empty
 	 * array is returned if there are no threads in the group.
 	 *
-	 * @param	group	the thread group to list
-	 * @return		an array of threads
-	 * @throws	NullPointerException
-	 * 			if the group is null
+	 * @param group the thread group to list
+	 * @return 	an array of threads
 	 */
 	public static Thread[] getGroupThreads(final ThreadGroup group) {
 		if (group == null) { 
@@ -146,11 +143,9 @@ public final class ThreadUtilities {
 	 * An empty array is returned if there are no threads in
 	 * the group.
 	 *
-	 * @param	name	the name of the thread group
-	 * @return		an array of threads, or null if the
-	 *			group is not found
-	 * @throws	NullPointerException
-	 * 			if the name is null
+	 * @param name the name of the thread group
+	 * @return 	an array of threads, or null if the
+	 * 			group is not found
 	 */
 	public static Thread[] getGroupThreads(final String name) {
 		final ThreadGroup group = getThreadGroup( name );
@@ -226,10 +221,8 @@ public final class ThreadUtilities {
 	 * if no such thread is found.  If more than one thread has
 	 * the same name, the first one found is returned.
 	 *
-	 * @param	name	the thread name to search for
-	 * @return		the thread, or null if not found
-	 * @throws	NullPointerException
-	 * 			if the name is null
+	 * @param name the thread name to search for
+	 * @return 	the thread, or null if not found
 	 */
 	public static Thread getThread(final String name) {
 		if (name == null) {
@@ -265,10 +258,8 @@ public final class ThreadUtilities {
 	 * Get the thread for the given thread info.  A null
 	 * is returned if the thread cannot be found.
 	 *
-	 * @param	info	the thread info to search for
-	 * @return		the thread, or null if not found
-	 * @throws	NullPointerException
-	 * 			if info is null
+	 * @param info the thread info to search for
+	 * @return 	the thread, or null if not found
 	 */
 	public static Thread getThread(final ThreadInfo info) {
 		if (info == null) {
@@ -321,10 +312,8 @@ public final class ThreadUtilities {
 	 * If more than one thread has the same name, the thread
 	 * info for the first one found is returned.
 	 *
-	 * @param	name	the thread name to search for
-	 * @return		the thread info, or null if not found
-	 * @throws	NullPointerException
-	 * 			if the name is null
+	 * @param name the thread name to search for
+	 * @return 	the thread info, or null if not found
 	 */
 	public static ThreadInfo getThreadInfo(final String name) {
 		if (name == null) {
@@ -344,10 +333,8 @@ public final class ThreadUtilities {
 	 * Get the thread info for the thread with the given ID.
 	 * A null is returned if no such thread info is found.
 	 *
-	 * @param	id	the thread ID to search for
-	 * @return		the thread info, or null if not found
-	 * @throws	IllegalArgumentException
-	 *			if id <= 0
+	 * @param id the thread ID to search for
+	 * @return 	the thread info, or null if not found
 	 */
 	public static ThreadInfo getThreadInfo(final long id) {
 		final ThreadMXBean thbean = ManagementFactory.getThreadMXBean();
@@ -370,10 +357,8 @@ public final class ThreadUtilities {
 	 * Get the thread info for the given thread.  A null is
 	 * returned if the thread info cannot be found.
 	 *
-	 * @param	thread	the thread to search for
-	 * @return		the thread info, or null if not found
-	 * @throws	NullPointerException
-	 * 			if thread is null
+	 * @param thread the thread to search for
+	 * @return 	the thread info, or null if not found
 	 */
 	public static ThreadInfo getThreadInfo(final Thread thread) {
 		if (thread == null) {
@@ -387,11 +372,9 @@ public final class ThreadUtilities {
 	 * Get the thread holding a lock on the given object.
 	 * A null is returned if there is no such thread.
 	 *
-	 * @param	object		the object to look for a lock on
-	 * @return			the thread holding a lock, or
+	 * @param object 	the object to look for a lock on
+	 * @return 		the thread holding a lock, or
 	 * 				null if there is none
-	 * @throws	NullPointerException
-	 * 				if the object is null
 	 */
 	public static Thread getLockingThread(final Object object) {
 		if (object == null) {
@@ -422,11 +405,9 @@ public final class ThreadUtilities {
 	 * Get the thread who's lock is blocking the given thread.
 	 * A null is returned if there is no such thread.
 	 *
-	 * @param	blockedThread	the blocked thread
-	 * @return			the blocking thread, or null if
+	 * @param blockedThread the blocked thread
+	 * @return 		the blocking thread, or null if
 	 * 				there is none
-	 * @throws	NullPointerException
-	 * 				if the blocked thread is null
 	 */
 	public static Thread getBlockingThread(final Thread blockedThread) {
 		final ThreadInfo info = getThreadInfo(blockedThread);

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_9Ee_wI3ZEeSFzLw_bxO_AQ" name="Model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_9Ee_wY3ZEeSFzLw_bxO_AQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Model" xmi:id="_YrYDQI3aEeSFzLw_bxO_AQ" name="generated">
+    <packagedElement xmi:type="uml:Package" xmi:id="_YrYDQY3aEeSFzLw_bxO_AQ" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_YrYDQo3aEeSFzLw_bxO_AQ" name="rafael">
+        <packagedElement xmi:type="uml:Package" xmi:id="_YrYDQ43aEeSFzLw_bxO_AQ" name="sdk">
+          <packagedElement xmi:type="uml:Package" xmi:id="_YrYDRI3aEeSFzLw_bxO_AQ" name="activity">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_YrYDRY3aEeSFzLw_bxO_AQ" name="ActivitiesCompletionListener">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YrYDRo3aEeSFzLw_bxO_AQ" name="onActivitiesCompletion" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YrYDR43aEeSFzLw_bxO_AQ" name="Activity" isAbstract="true">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNM43aEeSFzLw_bxO_AQ" name="bundles" visibility="protected" type="_YrhNMo3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNNY3aEeSFzLw_bxO_AQ" name="database" visibility="protected" type="_YrhNNI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNOI3aEeSFzLw_bxO_AQ" name="requesters" visibility="protected" type="_YrhNN43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNO43aEeSFzLw_bxO_AQ" name="replier" visibility="protected" type="_YrhNOo3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNPY3aEeSFzLw_bxO_AQ" name="publisherUp" visibility="protected" type="_YrhNPI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNPo3aEeSFzLw_bxO_AQ" name="publisherDown" visibility="protected" type="_YrhNPI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNQI3aEeSFzLw_bxO_AQ" name="subscriberDown" visibility="protected" type="_YrhNP43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNRI3aEeSFzLw_bxO_AQ" name="isSync" visibility="protected" type="_YrhNQ43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YrhNRo3aEeSFzLw_bxO_AQ" name="priority" visibility="protected" type="_YrhNRY3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Yrq-MY3aEeSFzLw_bxO_AQ" name="systemManager" visibility="protected" type="_Yrq-MI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YrYDTI3aEeSFzLw_bxO_AQ" name="Activity implements Runnable" client="_YrYDR43aEeSFzLw_bxO_AQ" supplier="_YrYDS43aEeSFzLw_bxO_AQ" contract="_YrYDS43aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yrq-Mo3aEeSFzLw_bxO_AQ" name="init" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-M43aEeSFzLw_bxO_AQ" name="requesters" type="_YrhNN43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-NI3aEeSFzLw_bxO_AQ" name="replier" type="_YrhNOo3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-NY3aEeSFzLw_bxO_AQ" name="publisherUp" type="_YrhNPI3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-No3aEeSFzLw_bxO_AQ" name="publisherDown" type="_YrhNPI3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-N43aEeSFzLw_bxO_AQ" name="subscriberDown" type="_YrhNP43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-OI3aEeSFzLw_bxO_AQ" name="database" type="_YrhNNI3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-OY3aEeSFzLw_bxO_AQ" name="isSync" type="_YrhNQ43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yrq-O43aEeSFzLw_bxO_AQ" name="reply" visibility="protected">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-PI3aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yrq-PY3aEeSFzLw_bxO_AQ" name="putBundle" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-Po3aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-P43aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yrq-QI3aEeSFzLw_bxO_AQ" name="getBundle" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yrq-QY3aEeSFzLw_bxO_AQ" type="_Yrq-Oo3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vMY3aEeSFzLw_bxO_AQ" name="putToDatabase" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vMo3aEeSFzLw_bxO_AQ" name="key" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vM43aEeSFzLw_bxO_AQ" name="value" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vNI3aEeSFzLw_bxO_AQ" name="getFromDatabase" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vNY3aEeSFzLw_bxO_AQ" type="_Yr0vMI3aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vNo3aEeSFzLw_bxO_AQ" name="key" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vN43aEeSFzLw_bxO_AQ" name="clearDatabase" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vOI3aEeSFzLw_bxO_AQ" name="removeFromDatabase" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vOY3aEeSFzLw_bxO_AQ" name="key" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vOo3aEeSFzLw_bxO_AQ" name="isDatabaseContainsValue" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vO43aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vPI3aEeSFzLw_bxO_AQ" name="value" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vPY3aEeSFzLw_bxO_AQ" name="isDatabaseContainsKey" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vPo3aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vP43aEeSFzLw_bxO_AQ" name="key" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vQI3aEeSFzLw_bxO_AQ" name="isDatabaseEmpty" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vQY3aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vQo3aEeSFzLw_bxO_AQ" name="publishDown" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vQ43aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr0vRI3aEeSFzLw_bxO_AQ" name="request" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr0vRY3aEeSFzLw_bxO_AQ" type="_Yrq-Oo3aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95II3aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95Io3aEeSFzLw_bxO_AQ" name="subscribeDown" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95I43aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95JI3aEeSFzLw_bxO_AQ" name="unsubscribeDown" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95JY3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95Jo3aEeSFzLw_bxO_AQ" name="publishUp" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95J43aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95KI3aEeSFzLw_bxO_AQ" name="setPriority" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95KY3aEeSFzLw_bxO_AQ" name="priority" type="_YrhNRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95LI3aEeSFzLw_bxO_AQ" name="log" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95LY3aEeSFzLw_bxO_AQ" name="level" type="_Yr95K43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95Lo3aEeSFzLw_bxO_AQ" name="msg" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Yr95L43aEeSFzLw_bxO_AQ" name="doActivity" visibility="public" isAbstract="true">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Yr95MI3aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YsHqII3aEeSFzLw_bxO_AQ" name="ActivityDescriptor">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsHqIY3aEeSFzLw_bxO_AQ" name="activity" visibility="private" type="_YrYDR43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsHqIo3aEeSFzLw_bxO_AQ" name="runPeriodically" visibility="private" type="_YrhNQ43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsHqI43aEeSFzLw_bxO_AQ" name="topic" visibility="private" type="_Yr95IY3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsHqJI3aEeSFzLw_bxO_AQ" name="getActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqJY3aEeSFzLw_bxO_AQ" type="_YrYDR43aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsHqJo3aEeSFzLw_bxO_AQ" name="runPeriodically" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqJ43aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsHqKI3aEeSFzLw_bxO_AQ" name="hashCode" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqKY3aEeSFzLw_bxO_AQ" type="_YrhNRY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsHqKo3aEeSFzLw_bxO_AQ" name="equals" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqK43aEeSFzLw_bxO_AQ" type="_YrhNQ43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqLI3aEeSFzLw_bxO_AQ" name="obj" type="_Yr0vMI3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsHqLY3aEeSFzLw_bxO_AQ" name="getTopic" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsHqLo3aEeSFzLw_bxO_AQ" type="_Yr95IY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_YsRbII3aEeSFzLw_bxO_AQ" name="ActivityHandler">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbIY3aEeSFzLw_bxO_AQ" name="putActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbIo3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbI43aEeSFzLw_bxO_AQ" name="activity" type="_YrYDR43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbJI3aEeSFzLw_bxO_AQ" name="runPeriodically" type="_YrhNQ43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbJY3aEeSFzLw_bxO_AQ" name="removeActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbJo3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbJ43aEeSFzLw_bxO_AQ" name="getActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbKI3aEeSFzLw_bxO_AQ" type="_YrYDR43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbKY3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbKo3aEeSFzLw_bxO_AQ" name="addActivitiesCompletionListener" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbK43aEeSFzLw_bxO_AQ" name="activitiesCompletionListener" type="_YrYDRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbLI3aEeSFzLw_bxO_AQ" name="getRemovedActivities" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsRbLo3aEeSFzLw_bxO_AQ" type="_YsRbLY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsRbL43aEeSFzLw_bxO_AQ" name="start" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YsalEI3aEeSFzLw_bxO_AQ" name="ActivityHandlerLogic" isAbstract="true">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsalE43aEeSFzLw_bxO_AQ" name="receiver" visibility="private" type="_YsalEo3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsalFI3aEeSFzLw_bxO_AQ" name="activities" visibility="private" type="_YrhNNI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsalFY3aEeSFzLw_bxO_AQ" name="activitiesCompletionListeners" visibility="private" type="_YsRbLY3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsalFo3aEeSFzLw_bxO_AQ" name="removedActivities" visibility="private" type="_YsRbLY3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YsalF43aEeSFzLw_bxO_AQ" name="deserialize" visibility="private" type="_YrhNQ43aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YsalEY3aEeSFzLw_bxO_AQ" name="ActivityHandlerLogic implements Runnable" client="_YsalEI3aEeSFzLw_bxO_AQ" supplier="_YrYDS43aEeSFzLw_bxO_AQ" contract="_YrYDS43aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsalGI3aEeSFzLw_bxO_AQ" name="doRun" visibility="public" isAbstract="true">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsalGY3aEeSFzLw_bxO_AQ" name="activity" type="_YrYDR43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YsalGo3aEeSFzLw_bxO_AQ" name="putActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsalG43aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YsalHI3aEeSFzLw_bxO_AQ" name="activity" type="_YrYDR43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWEI3aEeSFzLw_bxO_AQ" name="runPeriodically" type="_YrhNQ43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWEY3aEeSFzLw_bxO_AQ" name="removeActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWEo3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWE43aEeSFzLw_bxO_AQ" name="getActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWFI3aEeSFzLw_bxO_AQ" type="_YrYDR43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWFY3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWFo3aEeSFzLw_bxO_AQ" name="run" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWF43aEeSFzLw_bxO_AQ" name="addActivitiesCompletionListener" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWGI3aEeSFzLw_bxO_AQ" name="listener" type="_YrYDRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWGY3aEeSFzLw_bxO_AQ" name="removeActivitiesCompletionListener" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWGo3aEeSFzLw_bxO_AQ" name="listener" type="_YrYDRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWG43aEeSFzLw_bxO_AQ" name="onActivitiesCompletion" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWHI3aEeSFzLw_bxO_AQ" name="getRemovedActivities" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWHY3aEeSFzLw_bxO_AQ" type="_YsRbLY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YskWHo3aEeSFzLw_bxO_AQ" name="ActivityWithoutResult" isAbstract="true">
+              <generalization xmi:type="uml:Generalization" xmi:id="_YskWH43aEeSFzLw_bxO_AQ" general="_YrYDR43aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWII3aEeSFzLw_bxO_AQ" name="sendResult" visibility="private">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YskWIY3aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YskWIo3aEeSFzLw_bxO_AQ" name="run" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YstgAI3aEeSFzLw_bxO_AQ" name="ActivityWithResult" isAbstract="true">
+              <generalization xmi:type="uml:Generalization" xmi:id="_YstgAY3aEeSFzLw_bxO_AQ" general="_YrYDR43aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YstgAo3aEeSFzLw_bxO_AQ" name="sendResult" visibility="private">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YstgA43aEeSFzLw_bxO_AQ" name="bundle" type="_Yrq-Oo3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YstgBI3aEeSFzLw_bxO_AQ" name="run" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YstgBY3aEeSFzLw_bxO_AQ" name="ApplicationActivity" isAbstract="true">
+              <generalization xmi:type="uml:Generalization" xmi:id="_YstgBo3aEeSFzLw_bxO_AQ" general="_YrYDR43aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YstgB43aEeSFzLw_bxO_AQ" name="run" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YstgCI3aEeSFzLw_bxO_AQ" name="NormalActivityHandler">
+              <generalization xmi:type="uml:Generalization" xmi:id="_YstgCo3aEeSFzLw_bxO_AQ" general="_YstgCY3aEeSFzLw_bxO_AQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YstgDI3aEeSFzLw_bxO_AQ" name="activityHandlerLogic" visibility="private" type="_YsalEI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YstgC43aEeSFzLw_bxO_AQ" name="NormalActivityHandler implements ActivityHandler" client="_YstgCI3aEeSFzLw_bxO_AQ" supplier="_YsRbII3aEeSFzLw_bxO_AQ" contract="_YsRbII3aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3RAI3aEeSFzLw_bxO_AQ" name="putActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RAY3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RAo3aEeSFzLw_bxO_AQ" name="activity" type="_YrYDR43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RA43aEeSFzLw_bxO_AQ" name="runPeriodically" type="_YrhNQ43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3RBI3aEeSFzLw_bxO_AQ" name="removeActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RBY3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3RBo3aEeSFzLw_bxO_AQ" name="addActivitiesCompletionListener" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RB43aEeSFzLw_bxO_AQ" name="activitiesCompletionListener" type="_YrYDRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3RCI3aEeSFzLw_bxO_AQ" name="getRemovedActivities" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RCY3aEeSFzLw_bxO_AQ" type="_YsRbLY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3RCo3aEeSFzLw_bxO_AQ" name="getActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RC43aEeSFzLw_bxO_AQ" type="_YrYDR43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RDI3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_Ys3RDY3aEeSFzLw_bxO_AQ" name="RealTimeActivityHandler">
+              <generalization xmi:type="uml:Generalization" xmi:id="_Ys3RD43aEeSFzLw_bxO_AQ" general="_Ys3RDo3aEeSFzLw_bxO_AQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Ys3REY3aEeSFzLw_bxO_AQ" name="activityHandlerLogic" visibility="private" type="_YsalEI3aEeSFzLw_bxO_AQ" isUnique="false"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Ys3REI3aEeSFzLw_bxO_AQ" name="RealTimeActivityHandler implements ActivityHandler" client="_Ys3RDY3aEeSFzLw_bxO_AQ" supplier="_YsRbII3aEeSFzLw_bxO_AQ" contract="_YsRbII3aEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ys3REo3aEeSFzLw_bxO_AQ" name="putActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ys3RE43aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCAI3aEeSFzLw_bxO_AQ" name="activity" type="_YrYDR43aEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCAY3aEeSFzLw_bxO_AQ" name="runPeriodically" type="_YrhNQ43aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YtBCAo3aEeSFzLw_bxO_AQ" name="removeActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCA43aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YtBCBI3aEeSFzLw_bxO_AQ" name="addActivitiesCompletionListener" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCBY3aEeSFzLw_bxO_AQ" name="activitiesCompletionListener" type="_YrYDRY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YtBCBo3aEeSFzLw_bxO_AQ" name="getRemovedActivities" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCB43aEeSFzLw_bxO_AQ" type="_YsRbLY3aEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_YtBCCI3aEeSFzLw_bxO_AQ" name="getActivity" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCCY3aEeSFzLw_bxO_AQ" type="_YrYDR43aEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_YtBCCo3aEeSFzLw_bxO_AQ" name="topic" type="_Yr95IY3aEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_YrhNNo3aEeSFzLw_bxO_AQ" name="util">
+            <packagedElement xmi:type="uml:Class" xmi:id="_YrhNN43aEeSFzLw_bxO_AQ" name="Pool"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_Yrq-Oo3aEeSFzLw_bxO_AQ" name="Bundle"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_Ys3RDo3aEeSFzLw_bxO_AQ" name="RealTimeThread"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_YrhNOY3aEeSFzLw_bxO_AQ" name="middleware">
+            <packagedElement xmi:type="uml:Class" xmi:id="_YrhNOo3aEeSFzLw_bxO_AQ" name="MwReplier"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YrhNPI3aEeSFzLw_bxO_AQ" name="MwPublisher"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YrhNP43aEeSFzLw_bxO_AQ" name="MwSubscriber"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YsalEo3aEeSFzLw_bxO_AQ" name="MwReceiver"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Yrq-MI3aEeSFzLw_bxO_AQ" name="SystemManager"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_YrYDSI3aEeSFzLw_bxO_AQ" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_YrYDSY3aEeSFzLw_bxO_AQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_YrYDSo3aEeSFzLw_bxO_AQ" name="lang">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_YrYDS43aEeSFzLw_bxO_AQ" name="Runnable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Yr0vMI3aEeSFzLw_bxO_AQ" name="Object"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Yr95IY3aEeSFzLw_bxO_AQ" name="String"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_YstgCY3aEeSFzLw_bxO_AQ" name="Thread"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_YrhNMI3aEeSFzLw_bxO_AQ" name="util">
+        <packagedElement xmi:type="uml:Package" xmi:id="_YrhNMY3aEeSFzLw_bxO_AQ" name="concurrent">
+          <packagedElement xmi:type="uml:Class" xmi:id="_YrhNMo3aEeSFzLw_bxO_AQ" name="ConcurrentLinkedQueue"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_YrhNNI3aEeSFzLw_bxO_AQ" name="ConcurrentHashMap"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_Yr95Ko3aEeSFzLw_bxO_AQ" name="logging">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Yr95K43aEeSFzLw_bxO_AQ" name="Level"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_YsRbLY3aEeSFzLw_bxO_AQ" name="Vector"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_YrhNQY3aEeSFzLw_bxO_AQ" name="datatype">
+    <packagedElement xmi:type="uml:Package" xmi:id="_YrhNQo3aEeSFzLw_bxO_AQ" name="datatype">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_YrhNQ43aEeSFzLw_bxO_AQ" name="Boolean"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_YrhNRY3aEeSFzLw_bxO_AQ" name="Integer"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

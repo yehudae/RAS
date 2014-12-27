@@ -5,28 +5,65 @@ import java.nio.ByteBuffer;
 import com.sun.corba.se.impl.io.TypeMismatchException;
 import com.sun.org.apache.bcel.internal.generic.Type;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Bundle.
+ */
 public final class Bundle {
 
+	/** The randomizer. */
 	private static Randomizer randomizer = new Randomizer(Short.MAX_VALUE);
+	
+	/** The topic. */
 	private String topic = null;
+	
+	/** The destination. */
 	private String destination = null;
+	
+	/** The byte buffer. */
 	ByteBuffer byteBuffer = null;
+	
+	/** The pure data. */
 	private boolean pureData;
+	
+	/** The max bundle size. */
 	public static int MAX_BUNDLE_SIZE = 10000;
+	
+	/** The byte array type. */
 	private static byte BYTE_ARRAY_TYPE = 20;
     
+	/**
+	 * Instantiates a new bundle.
+	 */
 	private Bundle() {
 		pureData = false;
 	}
 	
+	/**
+	 * Instantiates a new bundle.
+	 *
+	 * @param topic the topic
+	 */
 	public Bundle(String topic) {
 		this(topic, MAX_BUNDLE_SIZE);
     }
 	
+	/**
+	 * Instantiates a new bundle.
+	 *
+	 * @param topic the topic
+	 * @param bundleSize the bundle size
+	 */
 	public Bundle(String topic, int bundleSize) {
 		this(topic, ByteBuffer.allocate(bundleSize));
 	}
 	
+	/**
+	 * Instantiates a new bundle.
+	 *
+	 * @param topic the topic
+	 * @param byteBuffer the byte buffer
+	 */
 	public Bundle(String topic, ByteBuffer byteBuffer) {
 		pureData = false;
         setTopic(topic);
@@ -34,78 +71,142 @@ public final class Bundle {
         prepare();
     }
 	
+	/**
+	 * Instantiates a new bundle.
+	 *
+	 * @param bundle the bundle
+	 */
 	public Bundle(Bundle bundle) {
 		pureData = bundle.pureData;
 		byteBuffer = bundle.byteBuffer.duplicate();		
 		topic = bundle.topic;
 	}
 	
+    /**
+     * Sets the request id.
+     *
+     * @param requestId the new request id
+     */
     private void setRequestId(int requestId) {
 		byteBuffer.putInt(4 + getTopicSize(), requestId);
     }
     
+    /**
+     * Gets the request id.
+     *
+     * @return the request id
+     */
     private int getRequestId() {
     	return byteBuffer.getInt(4 + getTopicSize());
     }
     
+    /**
+     * Gets the topic size.
+     *
+     * @return the topic size
+     */
     private int getTopicSize() {
     	return byteBuffer.getInt(0);
     }
     
+	/**
+	 * Serialize.
+	 *
+	 * @param bundle the bundle
+	 * @return the byte[]
+	 */
 	public static byte[] serialize(Bundle bundle) {
 		return bundle.byteBuffer.array();
 	}
 	
+	/**
+	 * Deserialize.
+	 *
+	 * @param data the data
+	 * @param size the size
+	 * @return the bundle
+	 */
 	public static Bundle deserialize(byte[] data, int size) {
 		Bundle bundle = Bundle.createBundle(data, size);
 		return bundle;
 	}
 
+    /**
+     * Generate request id.
+     *
+     * @return the int
+     */
     public int generateRequestId() {
     	int requestId = nextRequestId();
     	setRequestId(requestId);
     	return requestId;
     }
     
+    /**
+     * Next request id.
+     *
+     * @return the int
+     */
     private synchronized int nextRequestId() {
     	int requestId = randomizer.nextBoundedNonRepeatInt();
     	return requestId;
     }
     
+    /**
+     * Gets the topic with request id.
+     *
+     * @return the topic with request id
+     */
     public String getTopicWithRequestId() {
     	return (getRequestId() + "_" + getTopic());
     }
     
+    /**
+     * Update reply topic.
+     */
     public void updateReplyTopic() {
     	setTopic(getTopicWithRequestId());
     }
     
     /**
-     * Get the topic
+     * Get the topic.
+     *
      * @return the topic for the bundle
      */
     public String getTopic() {
     	return topic;
 	}
     
+    /**
+     * Size.
+     *
+     * @return the int
+     */
     public int size() {
     	return byteBuffer.limit();
     }
 
     /**
-     * Set the topic for the bundle
-     * @param inTopic the topic for the bundle
+     * Set the topic for the bundle.
+     *
+     * @param topic the new topic
      */
 	public void setTopic(String topic) {
 		this.topic = topic;
 	}
 
+    /**
+     * Clear.
+     */
     public void clear() {
     	byteBuffer.clear();
     	prepare();
     }
 
     
+    /**
+     * Prepare.
+     */
     private void prepare() {
     	byteBuffer.position(0);
         // store the topic size
@@ -118,14 +219,23 @@ public final class Bundle {
         byteBuffer.limit(8 + getTopicSize());
     }
     
+    /**
+     * Mark field.
+     */
     public void markField() {
     	byteBuffer.mark();
     }
     
+    /**
+     * Goto marked field.
+     */
     public void gotoMarkedField() {
     	byteBuffer.reset();
     }
     
+    /**
+     * Goto first field.
+     */
     public void gotoFirstField() {
     	byteBuffer.position(8 + getTopicSize());
     }
@@ -136,6 +246,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a Boolean, or null
+     * @return true, if successful
      */
     public boolean putBoolean(String key, boolean value) {
         if (false == beforePut(2, Type.BOOLEAN.getType())) {
@@ -153,6 +264,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a byte
+     * @return true, if successful
      */
     public boolean putByte(String key, byte value) {
         if (false == beforePut(2, Type.BYTE.getType())) {
@@ -169,6 +281,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a char, or null
+     * @return true, if successful
      */
     public boolean putChar(String key, char value) {
         if (false == beforePut(3, Type.CHAR.getType())) {
@@ -185,6 +298,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a short
+     * @return true, if successful
      */
     public boolean putShort(String key, short value) {
         if (false == beforePut(3, Type.SHORT.getType())) {
@@ -201,6 +315,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value an int, or null
+     * @return true, if successful
      */
     public boolean putInt(String key, int value) {
         if (false == beforePut(5, Type.INT.getType())) {
@@ -217,6 +332,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a long
+     * @return true, if successful
      */
     public boolean putLong(String key, long value) {
         if (false == beforePut(9, Type.LONG.getType())) {
@@ -233,6 +349,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a float
+     * @return true, if successful
      */
     public boolean putFloat(String key, float value) {
         if (false == beforePut(5, Type.FLOAT.getType())) {
@@ -249,6 +366,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a double
+     * @return true, if successful
      */
     public boolean putDouble(String key, double value) {
         if (false == beforePut(9, Type.DOUBLE.getType())) {
@@ -265,6 +383,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a String, or null
+     * @return true, if successful
      */
     public boolean putString(String key, String value) {
         if (false == beforePut(value.length()+5, Type.STRING.getType())) {
@@ -282,6 +401,7 @@ public final class Bundle {
      *
      * @param key a String, or null
      * @param value a byte array object, or null
+     * @return true, if successful
      */
     public boolean putByteArray(String key, byte[] value) {
         if (false == beforePut(value.length+5, BYTE_ARRAY_TYPE)) {
@@ -293,6 +413,12 @@ public final class Bundle {
     	return true;
     }
     
+    /**
+     * Put bundle.
+     *
+     * @param bundle the bundle
+     * @return true, if successful
+     */
     public boolean putBundle(Bundle bundle) {
     	topic = bundle.topic;
     	pureData = bundle.pureData;
@@ -300,6 +426,13 @@ public final class Bundle {
     	return true;
     }
 
+    /**
+     * Creates the bundle.
+     *
+     * @param data the data
+     * @param size the size
+     * @return the bundle
+     */
     public static Bundle createBundle(byte[] data, int size) {
     	Bundle bundle = new Bundle();
     	bundle.byteBuffer = ByteBuffer.wrap(data);
@@ -310,6 +443,14 @@ public final class Bundle {
     	return bundle;
     }
     
+    /**
+     * Creates the bundle.
+     *
+     * @param topic the topic
+     * @param data the data
+     * @param size the size
+     * @return the bundle
+     */
     public static Bundle createBundle(String topic, byte[] data, int size) {
     	Bundle bundle = new Bundle();
     	bundle.byteBuffer = ByteBuffer.wrap(data);
@@ -320,6 +461,12 @@ public final class Bundle {
     	return bundle;
     }
 
+    /**
+     * Gets the stored topic.
+     *
+     * @param byteBuffer the byte buffer
+     * @return the stored topic
+     */
     private static String getStoredTopic(ByteBuffer byteBuffer) {
 		byteBuffer.position(0);
     	int topicSize = byteBuffer.getInt();
@@ -328,6 +475,11 @@ public final class Bundle {
 		return new String(topicBytes);
     }
     
+    /**
+     * Gets the next field type.
+     *
+     * @return the next field type
+     */
     public byte getNextFieldType() {
     	byte type = byteBuffer.get();
     	byteBuffer.position(byteBuffer.position()-1);
@@ -364,6 +516,12 @@ public final class Bundle {
         return byteBuffer.get();
     }
     
+    /**
+     * Gets the byte array.
+     *
+     * @param key the key
+     * @return the byte array
+     */
     public byte[] getByteArray(String key) {
         if (BYTE_ARRAY_TYPE != getNextFieldType()) {
         	throw new TypeMismatchException("Can't convert next field to byte array");
@@ -484,6 +642,12 @@ public final class Bundle {
     	return new String(bytes);
     }
     
+    /**
+     * Gets the data.
+     *
+     * @return the data
+     * @throws NullPointerException the null pointer exception
+     */
     public byte[] getData() throws NullPointerException {
     	if (pureData) {
     		return byteBuffer.array();
@@ -492,6 +656,13 @@ public final class Bundle {
     	throw new NullPointerException();
     }
     
+    /**
+     * Before put.
+     *
+     * @param sizeof the sizeof
+     * @param type the type
+     * @return true, if successful
+     */
     private boolean beforePut(int sizeof, byte type) {
         if ((size() + sizeof) > byteBuffer.capacity()) {
         	return false;
@@ -503,12 +674,16 @@ public final class Bundle {
         return true;
     }
 
+    /**
+     * After put.
+     */
     private void afterPut() {
     	byteBuffer.reset();
     }
 
     /**
-     * Set the destination for the request
+     * Set the destination for the request.
+     *
      * @param destination - The full class name containing the destination of the request.
      */
     public void setDestination(String destination){
@@ -516,10 +691,9 @@ public final class Bundle {
     }
     
     /**
-     * This method returns the destination for the request
-     * 
+     * This method returns the destination for the request.
+     *
      * @return The destination of the request
-     * @exception NullPointerException If no destination was specified.
      */
 	public String getDestination(){
 		if (null == destination){
@@ -528,6 +702,11 @@ public final class Bundle {
 		return destination;
 	}
 	
+	/**
+	 * Checks for remaining.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean hasRemaining() {
 		return byteBuffer.hasRemaining();
 	}

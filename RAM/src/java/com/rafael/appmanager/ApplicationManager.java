@@ -25,40 +25,98 @@ import com.rafael.sdk.middleware.jmq.JmqMiddleware;
 import com.rafael.sdk.util.NormalThreadFactory;
 import com.rafael.sdk.util.RealTimeThreadFactory;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ApplicationManager.
+ */
 public class ApplicationManager implements ApplicationManagerMBean {
+	
+	/** The Constant XML_ELEMENT_MANAGERS. */
 	private static final String XML_ELEMENT_MANAGERS = "Managers";
+	
+	/** The Constant XML_ELEMENT_MANAGER. */
 	private static final String XML_ELEMENT_MANAGER = "Manager";	
+	
+	/** The Constant XML_ELEMENT_APPLICATIONS. */
 	private static final String XML_ELEMENT_APPLICATIONS = "Applications";	
+	
+	/** The Constant XML_ELEMENT_APPLICATION. */
 	private static final String XML_ELEMENT_APPLICATION = "Application";
+	
+	/** The Constant XML_ATTRIBUTE_CLASS_NAME. */
 	private static final String XML_ATTRIBUTE_CLASS_NAME = "className";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_CONNECTION. */
 	private static final String XML_ATTRIBUTE_DOWN_CONNECTION = "downConnection";		
+	
+	/** The Constant XML_ATTRIBUTE_SERVICE. */
 	private static final String XML_ATTRIBUTE_SERVICE = "service";
 	
+	/** The Constant XML_ATTRIBUTE_ASYNC_HANDLER_THREAD_COUNT. */
 	private static final String XML_ATTRIBUTE_ASYNC_HANDLER_THREAD_COUNT  = "downAsyncHandlerThreadCount";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_POOL_PRIORITY. */
 	private static final String XML_ATTRIBUTE_DOWN_ASYNC_HANDLER_THREAD_POOL_PRIORITY  = "downAsyncHandlerThreadPoolPriority";
+	
+	/** The Constant XML_ATTRIBUTE_DOWN_ASYNC_THREAD_PRIORITY. */
 	private static final String XML_ATTRIBUTE_DOWN_ASYNC_THREAD_PRIORITY = "downAsyncThreadPriority";
 
+	/** The Constant XML_ATTRIBUTE_MAIN_THREAD_REALTIME. */
 	private static final String XML_ATTRIBUTE_MAIN_THREAD_REALTIME  = "mainThreadRealtime";
+	
+	/** The Constant XML_ATTRIBUTE_MAIN_THREAD_PRIORITY. */
 	private static final String XML_ATTRIBUTE_MAIN_THREAD_PRIORITY  = "mainThreadPriority";
 
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILENAME. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILENAME	 = "loggerFilename";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILE_SIZE. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILE_SIZE	 = "loggerFileSize";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_FILE_COUNT. */
 	private static final String XML_ATTRIBUTE_LOGGER_FILE_COUNT	 = "loggerFileCount";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_SOCKET_HOST. */
 	private static final String XML_ATTRIBUTE_LOGGER_SOCKET_HOST = "loggerSocketHost";	
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_SOCKET_PORT. */
 	private static final String XML_ATTRIBUTE_LOGGER_SOCKET_PORT = "loggerSocketPort";
+	
+	/** The Constant XML_ATTRIBUTE_LOGGER_PRIORITY. */
 	private static final String XML_ATTRIBUTE_LOGGER_PRIORITY	 = "loggerPriority";	
+	
+	/** The Constant XML_ATTRIBUTE_MIDDLEWARE. */
 	private static final String XML_ATTRIBUTE_MIDDLEWARE 		 = "middleware";
 	
+	/** The applications map. */
 	private Map<String, Application> applicationsMap;
+	
+	/** The system manager. */
 	private SystemManager systemManager;
+	
+	/** The manager descriptors. */
 	private ArrayList<ManagerDescriptor> managerDescriptors = null;
+	
+	/** The fw node list. */
 	private NodeList fwNodeList;
+	
+	/** The doc element. */
 	private Element docElement;
 	
+	/**
+	 * The Class ManagerDescriptor.
+	 */
 	private class ManagerDescriptor{
+		
+		/** The manager. */
 		Manager manager;
 	}
 
+	/**
+	 * Instantiates a new application manager.
+	 *
+	 * @param configurationFile the configuration file
+	 */
 	public ApplicationManager(String configurationFile)	{
 		// a map of all the applications
 		applicationsMap = new HashMap<String, Application>();
@@ -71,6 +129,12 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		open(configurationFile);
 	}
 	
+	/**
+	 * Open.
+	 *
+	 * @param configurationFile the configuration file
+	 * @return the element
+	 */
 	private Element open(String configurationFile) {
 		try {
 			// load configuration from XML file
@@ -88,6 +152,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		return docElement;
 	}
 	
+	/**
+	 * Inits the.
+	 */
 	public void init() {
 		configure();
 		createManagers();
@@ -95,6 +162,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		createApplications();
 	}
 
+	/**
+	 * Sets the system logger.
+	 */
 	private void setSystemLogger() {
 		String loggerPriority = docElement.getAttribute(XML_ATTRIBUTE_LOGGER_PRIORITY);
 		if (!loggerPriority.isEmpty()) {
@@ -115,6 +185,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		}
 	}
 	
+	/**
+	 * Sets the system middleware.
+	 */
 	private void setSystemMiddleware() {
 		String middlewareType = docElement.getAttribute(XML_ATTRIBUTE_MIDDLEWARE);
 		if (!middlewareType.isEmpty()) {
@@ -134,14 +207,16 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		}
 	}
 	
+	/**
+	 * Configure.
+	 */
 	private void configure() {
 		setSystemLogger();
 		setSystemMiddleware();
 	}
 	
 	/**
-	 * 
-	 * @param inConfigurationFile
+	 * Creates the managers.
 	 */
 	public void createManagers() {
 		if( (fwNodeList != null) && (fwNodeList.getLength() > 0) ) {
@@ -156,6 +231,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		}
 	}
 	
+	/**
+	 * Creates the applications.
+	 */
 	public void createApplications()	{
 		if( (fwNodeList != null) && (fwNodeList.getLength() > 0) ){
 			for (int i = 0; i < fwNodeList.getLength(); i++){			
@@ -197,6 +275,11 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	}
 
 	
+	/**
+	 * Creates the managers.
+	 *
+	 * @param fwElement the fw element
+	 */
 	private void createManagers(Node fwElement) {
 		NodeList managersNodeList = fwElement.getChildNodes();
 		
@@ -251,7 +334,7 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	
 	
 	/**
-	 * Create managers 
+	 * Create managers.
 	 */
 	public void bindManagers() {
 		if( (fwNodeList != null) && (fwNodeList.getLength() > 0) ){
@@ -323,9 +406,10 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	
 
 	/**
-	 * 
-	 * @param className
-	 * @return
+	 * Creates the manager.
+	 *
+	 * @param className the class name
+	 * @return the manager
 	 */
 	private Manager createManager(String className)	{
 		Manager manager = null;
@@ -347,9 +431,10 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	}	
 	
 	/**
-	 * 
-	 * @param className
-	 * @return
+	 * Creates the application.
+	 *
+	 * @param className the class name
+	 * @return the application
 	 */
 	private Application createApplication(String className)	{
 		Application application = null;
@@ -369,9 +454,10 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	}
 
 	/**
-	 * 
-	 * @param appClassName
-	 * @return
+	 * Gets the application.
+	 *
+	 * @param appClassName the app class name
+	 * @return the application
 	 */
 	public Application getApplication(String appClassName){
 		if (this.applicationsMap.containsKey(appClassName) == true)	{
@@ -383,8 +469,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 	}
 
 	/**
-	 * 
-	 * @param appName
+	 * Run application.
+	 *
+	 * @param appName the app name
 	 */
 	public void runApplication(String appName){
 		try	{
@@ -398,6 +485,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.appmanager.ApplicationManagerMBean#startApplication(java.lang.String)
+	 */
 	@Override
 	public void startApplication(String appClassName){
 		Application application = getApplication(appClassName);
@@ -407,6 +497,9 @@ public class ApplicationManager implements ApplicationManagerMBean {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.appmanager.ApplicationManagerMBean#stopApplication(java.lang.String)
+	 */
 	@Override
 	public void stopApplication(String appClassName){
 		Application application = getApplication(appClassName);

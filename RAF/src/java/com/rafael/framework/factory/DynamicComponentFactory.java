@@ -12,17 +12,30 @@ import org.w3c.dom.NodeList;
 
 import com.rafael.sdk.component.Component;
 
+// TODO: Auto-generated Javadoc
+/**
+ * A factory for creating DynamicComponent objects.
+ */
 public class DynamicComponentFactory  extends ComponentFactory{
 
+	/** The Constant XML_CONFIGURATION_FILE. */
 	private static final String XML_CONFIGURATION_FILE = "framework.xml";
 	
+	/** The Constant XML_ELEMENT_COMPONENTS. */
 	private static final String XML_ELEMENT_COMPONENTS = "Components";	
+	
+	/** The Constant XML_ELEMENT_COMPONENT. */
 	private static final String XML_ELEMENT_COMPONENT = "Component";
 	
+	/** The Constant XML_ELEMENT_CLASS_NAME. */
 	private static final String XML_ELEMENT_CLASS_NAME = "className";
 	
+	/** The components map. */
 	private Map<String, Component> componentsMap = null;
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.framework.factory.ComponentFactory#createComponents(java.util.Map)
+	 */
 	@Override
 	public void createComponents(Map<String, Component> componentsMap) {
 		try	{
@@ -48,6 +61,11 @@ public class DynamicComponentFactory  extends ComponentFactory{
 		}
 	}
 
+	/**
+	 * Creates a new DynamicComponent object.
+	 *
+	 * @param fwNodeList the fw node list
+	 */
 	private void createComponents(NodeList fwNodeList) {
 		if((fwNodeList != null) && (fwNodeList.getLength() > 0)){
 			for (int i = 0; i < fwNodeList.getLength(); i++){			
@@ -73,6 +91,11 @@ public class DynamicComponentFactory  extends ComponentFactory{
 		}
 	}
 
+	/**
+	 * Creates a new DynamicComponent object.
+	 *
+	 * @param className the class name
+	 */
 	private void createComponent(String className) {
 		// check if the component was already created
 		if (!componentsMap.containsKey(className)){

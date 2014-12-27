@@ -7,13 +7,22 @@ import com.rafael.sdk.middleware.MwPublisher;
 import com.rafael.sdk.util.Bundle;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MwZmqPublisher.
+ */
 public class MwZmqPublisher extends MwPublisher {
 
+	/** The publisher. */
 	private ZMQ.Socket publisher = null;
 
 	/**
-	 * 
-	 * @param publisher
+	 * Instantiates a new mw zmq publisher.
+	 *
+	 * @param context the context
+	 * @param connectionType the connection type
+	 * @param connectionString the connection string
+	 * @param component the component
 	 */
 	public MwZmqPublisher (ZMQ.Context context, String connectionType, String connectionString, Component component) {
 	    super(connectionType, connectionString, component);
@@ -25,11 +34,17 @@ public class MwZmqPublisher extends MwPublisher {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwPublisher#send(java.lang.String, byte[])
+	 */
 	public synchronized boolean send(String topic, byte[] bytes){
 		publisher.send(topic,ZMQ.SNDMORE);
 		return publisher.send(bytes, bytes.length);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwSender#send(com.rafael.sdk.util.Bundle)
+	 */
 	public synchronized Bundle send(Bundle bundle) {
 		// send the topic
 		String topic = bundle.getTopic();

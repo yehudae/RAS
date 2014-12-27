@@ -10,18 +10,40 @@ import com.rafael.sdk.component.Component;
 import com.rafael.sdk.middleware.MwSubscriber;
 import com.rafael.sdk.util.Bundle;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MwDirectSubscriber.
+ */
 public class MwDirectSubscriber extends MwSubscriber {
 
+	/** The queue. */
 	private BlockingQueue<Bundle> queue = new LinkedBlockingQueue<Bundle>();
+	
+	/** The publishers. */
 	private Map<String, MwDirectPublisher> publishers;
+	
+	/** The connected publishers. */
 	private Vector<MwDirectPublisher> connectedPublishers = new Vector<MwDirectPublisher>();
+	
+	/** The topics. */
 	private Map<String, Integer> topics = new HashMap<String, Integer>();
 	
+	/**
+	 * Instantiates a new mw direct subscriber.
+	 *
+	 * @param publishers the publishers
+	 * @param connectionType the connection type
+	 * @param connectionString the connection string
+	 * @param component the component
+	 */
 	public MwDirectSubscriber (Map<String, MwDirectPublisher> publishers, String connectionType, String connectionString, Component component) {
 		super(connectionType, connectionString, component);
 		this.publishers = publishers;
 	}
 		
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwConnector#connect(java.lang.String)
+	 */
 	public void connect(String connection) {
 		MwDirectPublisher publisher = publishers.get(connection);
 		if (null != publisher) {
@@ -29,6 +51,9 @@ public class MwDirectSubscriber extends MwSubscriber {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwConnector#disconnect(java.lang.String)
+	 */
 	public void disconnect(String connection) {
 		MwDirectPublisher publisher = publishers.get(connection);
 		if (null != publisher) {
@@ -48,6 +73,9 @@ public class MwDirectSubscriber extends MwSubscriber {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwSubscriber#subscribe(java.lang.String)
+	 */
 	public void subscribe(String topic) {
 		int numOfconnectedPublisers = connectedPublishers.size();
 		
@@ -68,6 +96,9 @@ public class MwDirectSubscriber extends MwSubscriber {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwSubscriber#unsubscribe(java.lang.String)
+	 */
 	public void unsubscribe(String topic) {
 		Integer count = topics.get(topic);
 		if (null != count) {
@@ -85,6 +116,12 @@ public class MwDirectSubscriber extends MwSubscriber {
 		}
 	}
 	
+	/**
+	 * Receive.
+	 *
+	 * @param topic the topic
+	 * @return the byte[]
+	 */
 	public byte[] receive(byte[] topic) {
 		Bundle bundle = receive(false);
 		byte[] bundleTopic = bundle.getTopic().getBytes();
@@ -92,6 +129,9 @@ public class MwDirectSubscriber extends MwSubscriber {
 		return bundle.getData();
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwReceiver#receive(boolean)
+	 */
 	public Bundle receive(boolean deserialize) {
 		Bundle bundle = null;
 		

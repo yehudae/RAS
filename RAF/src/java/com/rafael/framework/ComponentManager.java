@@ -5,14 +5,28 @@ import java.util.Map;
 
 import com.rafael.sdk.component.Component;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ComponentManager.
+ */
 public class ComponentManager{
 	
+	/** The components. */
 	private Map<String, Component> components;
 
+	/**
+	 * Instantiates a new component manager.
+	 */
 	public ComponentManager() {
 		components = new HashMap<String, Component>();
 	}	
 	
+	/**
+	 * Gets the component by class name.
+	 *
+	 * @param className the class name
+	 * @return the component by class name
+	 */
 	private Component getComponentByClassName(String className) {		
 		if ( components.containsKey(className) ) {
 			return components.get(className); 
@@ -21,6 +35,11 @@ public class ComponentManager{
 		return null;
 	}
 	
+	/**
+	 * Start component.
+	 *
+	 * @param className the class name
+	 */
 	public void startComponent(String className) {
 		Component component = getComponentByClassName(className);
 		if(component != null) {
@@ -28,6 +47,12 @@ public class ComponentManager{
 		}
 	}
 	
+	/**
+	 * Creates the component.
+	 *
+	 * @param className the class name
+	 * @return the component
+	 */
 	public Component createComponent(String className) {
 		Component component = getComponentByClassName(className);
 
@@ -45,6 +70,12 @@ public class ComponentManager{
 		return component;
 	}
 
+	/**
+	 * Adds the component.
+	 *
+	 * @param className the class name
+	 * @param component the component
+	 */
 	public void addComponent(String className, Component component) {
 		components.put(className, component);
 	}

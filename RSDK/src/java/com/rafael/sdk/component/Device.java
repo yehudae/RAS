@@ -7,8 +7,15 @@ import com.rafael.sdk.activity.RealTimeActivityHandler;
 import com.rafael.sdk.activity.SyncActivityHandlerLogic;
 import com.rafael.sdk.util.Bundle;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Device.
+ */
 public abstract class Device extends Component {
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.component.Component#init()
+	 */
 	public void init() {
 		if (isSyncHandlerRealTime) {
 			syncActivityHandler = new RealTimeActivityHandler(new SyncActivityHandlerLogic(replier, false), upSyncThreadPriority);
@@ -44,10 +51,20 @@ public abstract class Device extends Component {
 		onCreate();
 	}
 
+	/**
+	 * Publish up.
+	 *
+	 * @param bundle the bundle
+	 */
 	public void publishUp(Bundle bundle) {
 		publisherUp.send(bundle);
 	}
 	
+	/**
+	 * Publish down.
+	 *
+	 * @param bundle the bundle
+	 */
 	public void publishDown(Bundle bundle) {
 		publisherDown.send(bundle);
 	}

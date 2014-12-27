@@ -6,13 +6,22 @@ import com.rafael.sdk.component.Component;
 import com.rafael.sdk.middleware.MwReplier;
 import com.rafael.sdk.util.Bundle;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MwZmqReplier.
+ */
 public class MwZmqReplier extends MwReplier {
 
+	/** The replier. */
 	ZMQ.Socket replier = null;
 	
 	/**
-	 * Constructor
-	 * @param newReplierId the replier Id
+	 * Constructor.
+	 *
+	 * @param context the context
+	 * @param connectionType the connection type
+	 * @param connectionString the connection string
+	 * @param component the component
 	 */
 	public MwZmqReplier(ZMQ.Context context, String connectionType, String connectionString, Component component) {
 	    super(connectionType, connectionString, component);
@@ -22,6 +31,9 @@ public class MwZmqReplier extends MwReplier {
 	    replier.bind(connectionType + connectionString);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwReceiver#receive(boolean)
+	 */
 	@Override
 	public Bundle receive(boolean deserialize) {
 		byte[] data = new byte[Bundle.MAX_BUNDLE_SIZE];
@@ -29,6 +41,9 @@ public class MwZmqReplier extends MwReplier {
 		return Bundle.deserialize(data, size);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.rafael.sdk.middleware.MwSender#send(com.rafael.sdk.util.Bundle)
+	 */
 	@Override
 	public Bundle send(Bundle bundle) {
 		byte[] data = Bundle.serialize(bundle);		
