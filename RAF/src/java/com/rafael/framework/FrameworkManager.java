@@ -21,7 +21,7 @@ import com.rafael.sdk.middleware.MiddlewareManager;
 import com.rafael.sdk.middleware.MwPublisher;
 import com.rafael.sdk.middleware.MwReplier;
 import com.rafael.sdk.middleware.MwSubscriber;
-import com.rafael.sdk.middleware.jmq.JmqMiddleware;
+import com.rafael.sdk.middleware.mix.MixMiddleware;
 import com.rafael.sdk.util.NormalThreadFactory;
 
 // TODO: Auto-generated Javadoc
@@ -233,11 +233,11 @@ public class FrameworkManager implements FrameworkManagerMBean{
 				MiddlewareManager.instance().setMiddleware(middleware);
 			}
 			catch (Exception e) {
-				MiddlewareManager.instance().setMiddleware(new JmqMiddleware());
+				MiddlewareManager.instance().setMiddleware(new MixMiddleware());
 			}
 		}
 		else {
-			MiddlewareManager.instance().setMiddleware(new JmqMiddleware());
+			MiddlewareManager.instance().setMiddleware(new MixMiddleware());
 		}
 	}
 

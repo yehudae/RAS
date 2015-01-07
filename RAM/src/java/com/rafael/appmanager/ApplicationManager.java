@@ -21,7 +21,7 @@ import com.rafael.sdk.middleware.Middleware;
 import com.rafael.sdk.middleware.MiddlewareManager;
 import com.rafael.sdk.middleware.MwPublisher;
 import com.rafael.sdk.middleware.MwSubscriber;
-import com.rafael.sdk.middleware.jmq.JmqMiddleware;
+import com.rafael.sdk.middleware.mix.MixMiddleware;
 import com.rafael.sdk.util.NormalThreadFactory;
 import com.rafael.sdk.util.RealTimeThreadFactory;
 
@@ -199,11 +199,11 @@ public class ApplicationManager implements ApplicationManagerMBean {
 				MiddlewareManager.instance().setMiddleware(middleware);
 			}
 			catch (Exception e) {
-				MiddlewareManager.instance().setMiddleware(new JmqMiddleware());
+				MiddlewareManager.instance().setMiddleware(new MixMiddleware());
 			}
 		}
 		else {
-			MiddlewareManager.instance().setMiddleware(new JmqMiddleware());
+			MiddlewareManager.instance().setMiddleware(new MixMiddleware());
 		}
 	}
 	

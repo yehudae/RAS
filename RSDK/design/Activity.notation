@@ -627,8 +627,8 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_4610Zo3aEeSFzLw_bxO_AQ"/>
     <element xmi:type="uml:Generalization" href="Activity.uml#_YstgAY3aEeSFzLw_bxO_AQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4610Z43aEeSFzLw_bxO_AQ" points="[-7, -50, 9, 61]$[-9, -61, 7, 50]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7Esc0o3aEeSFzLw_bxO_AQ" id="(0.9972067039106145,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7Esc043aEeSFzLw_bxO_AQ" id="(0.9860335195530726,1.0)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7Esc0o3aEeSFzLw_bxO_AQ" id="(0.49162011173184356,0.013245033112582781)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7Esc043aEeSFzLw_bxO_AQ" id="(0.5111731843575419,0.9536423841059603)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4610ao3aEeSFzLw_bxO_AQ" type="4002" source="_YtKMAI3aEeSFzLw_bxO_AQ" target="_YtBCC43aEeSFzLw_bxO_AQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_4610bY3aEeSFzLw_bxO_AQ" type="6007">

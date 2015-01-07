@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1jXOUI3yEeSFzLw_bxO_AQ" name="model">
+  <packagedElement xmi:type="uml:Model" xmi:id="_6RDFcI3yEeSFzLw_bxO_AQ" name="generated">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6SFnQI3yEeSFzLw_bxO_AQ" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_6SFnQY3yEeSFzLw_bxO_AQ" name="rafael">
+        <packagedElement xmi:type="uml:Package" xmi:id="_6SFnQo3yEeSFzLw_bxO_AQ" name="sdk">
+          <packagedElement xmi:type="uml:Package" xmi:id="_6SFnQ43yEeSFzLw_bxO_AQ" name="component">
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SFnRI3yEeSFzLw_bxO_AQ" name="Application" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_6SPYQI3yEeSFzLw_bxO_AQ">
+                <body>
+ * The Class Application.
+ </body>
+              </ownedComment>
+              <generalization xmi:type="uml:Generalization" xmi:id="_6SPYQo3yEeSFzLw_bxO_AQ" general="_6SPYQY3yEeSFzLw_bxO_AQ"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6SPYR43yEeSFzLw_bxO_AQ" name="Application implements Runnable" client="_6SFnRI3yEeSFzLw_bxO_AQ" supplier="_6SPYRo3yEeSFzLw_bxO_AQ" contract="_6SPYRo3yEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6SYiMI3yEeSFzLw_bxO_AQ" name="run" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6SYiMY3yEeSFzLw_bxO_AQ" name="init" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6SYiNI3yEeSFzLw_bxO_AQ" name="initActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SYiNY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Inits the activity.
+	 *
+	 * @param applicationActivity the application activity
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6SYiNo3yEeSFzLw_bxO_AQ" name="applicationActivity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SPYQY3yEeSFzLw_bxO_AQ" name="Component" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_6SiTMI3yEeSFzLw_bxO_AQ">
+                <body>
+ * The Class Component.
+ </body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SiTM43yEeSFzLw_bxO_AQ" name="publisherUp" visibility="protected" type="_6SiTMo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SiTNI3yEeSFzLw_bxO_AQ">
+                  <body> The publisher up. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SiTNY3yEeSFzLw_bxO_AQ" name="publisherDown" visibility="protected" type="_6SiTMo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SiTNo3yEeSFzLw_bxO_AQ">
+                  <body> The publisher down. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdII3yEeSFzLw_bxO_AQ" name="subscriberUp" visibility="protected" type="_6SiTN43yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdIY3yEeSFzLw_bxO_AQ">
+                  <body> The subscriber up. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdIo3yEeSFzLw_bxO_AQ" name="subscriberDown" visibility="protected" type="_6SiTN43yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdI43yEeSFzLw_bxO_AQ">
+                  <body> The subscriber down. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdJo3yEeSFzLw_bxO_AQ" name="requesters" visibility="protected" type="_6SrdJY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdJ43yEeSFzLw_bxO_AQ">
+                  <body> The requesters. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdKY3yEeSFzLw_bxO_AQ" name="replier" visibility="protected" type="_6SrdKI3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdKo3yEeSFzLw_bxO_AQ">
+                  <body> The replier. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdLo3yEeSFzLw_bxO_AQ" name="upAsyncThreadCount" visibility="protected" type="_6SrdLY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdL43yEeSFzLw_bxO_AQ">
+                  <body> The up async thread count. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdMI3yEeSFzLw_bxO_AQ" name="downAsyncThreadCount" visibility="protected" type="_6SrdLY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdMY3yEeSFzLw_bxO_AQ">
+                  <body> The down async thread count. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdM43yEeSFzLw_bxO_AQ" name="syncActivityHandler" visibility="protected" type="_6SrdMo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdNI3yEeSFzLw_bxO_AQ">
+                  <body> The sync activity handler. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdNY3yEeSFzLw_bxO_AQ" name="upActivityHandler" visibility="protected" type="_6SrdMo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdNo3yEeSFzLw_bxO_AQ">
+                  <body> The up activity handler. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6SrdN43yEeSFzLw_bxO_AQ" name="downActivityHandler" visibility="protected" type="_6SrdMo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6SrdOI3yEeSFzLw_bxO_AQ">
+                  <body> The down activity handler. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OII3yEeSFzLw_bxO_AQ" name="database" visibility="protected" type="_6SrdO43yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OIY3yEeSFzLw_bxO_AQ">
+                  <body> The database. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OI43yEeSFzLw_bxO_AQ" name="upAsyncThreadFactory" visibility="protected" type="_6S1OIo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OJI3yEeSFzLw_bxO_AQ">
+                  <body> The up async thread factory. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OJY3yEeSFzLw_bxO_AQ" name="downAsyncThreadFactory" visibility="protected" type="_6S1OIo3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OJo3yEeSFzLw_bxO_AQ">
+                  <body> The down async thread factory. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OKI3yEeSFzLw_bxO_AQ" name="isSyncHandlerRealTime" visibility="protected" type="_6S1OJ43yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OKY3yEeSFzLw_bxO_AQ">
+                  <body> The is sync handler real time. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OKo3yEeSFzLw_bxO_AQ" name="downAsyncThreadPriority" visibility="protected" type="_6SrdLY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OK43yEeSFzLw_bxO_AQ">
+                  <body> The down async thread priority. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OLI3yEeSFzLw_bxO_AQ" name="upAsyncThreadPriority" visibility="protected" type="_6SrdLY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OLY3yEeSFzLw_bxO_AQ">
+                  <body> The up async thread priority. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6S1OLo3yEeSFzLw_bxO_AQ" name="upSyncThreadPriority" visibility="protected" type="_6SrdLY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OL43yEeSFzLw_bxO_AQ">
+                  <body> The up sync thread priority. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OMI3yEeSFzLw_bxO_AQ" name="onCreate" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OMY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On create.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OMo3yEeSFzLw_bxO_AQ" name="onStart" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OM43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On start.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1ONI3yEeSFzLw_bxO_AQ" name="onPause" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1ONY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On pause.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1ONo3yEeSFzLw_bxO_AQ" name="onResume" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1ON43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On resume.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OOI3yEeSFzLw_bxO_AQ" name="onRestart" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OOY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On restart.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OOo3yEeSFzLw_bxO_AQ" name="onStop" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OO43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On stop.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OPI3yEeSFzLw_bxO_AQ" name="onDestroy" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OPY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * On destroy.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OPo3yEeSFzLw_bxO_AQ" name="init" visibility="public" isAbstract="true">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OP43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Inits the.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OQI3yEeSFzLw_bxO_AQ" name="init" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OQY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Inits the.
+	 *
+	 * @param downAsyncThreadPriority the down async thread priority
+	 * @param upAsyncThreadPriority the up async thread priority
+	 * @param upSyncThreadPriority the up sync thread priority
+	 * @param isSyncHandlerRealTime the is sync handler real time
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S1OQo3yEeSFzLw_bxO_AQ" name="downAsyncThreadPriority" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S1OQ43yEeSFzLw_bxO_AQ" name="upAsyncThreadPriority" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S1ORI3yEeSFzLw_bxO_AQ" name="upSyncThreadPriority" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S1ORY3yEeSFzLw_bxO_AQ" name="isSyncHandlerRealTime" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1ORo3yEeSFzLw_bxO_AQ" name="start" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OR43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Start.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OSI3yEeSFzLw_bxO_AQ" name="setUpPublisher" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S1OSY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the up publisher.
+	 *
+	 * @param publisherUp the new up publisher
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S1OSo3yEeSFzLw_bxO_AQ" name="publisherUp" type="_6SiTMo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S1OS43yEeSFzLw_bxO_AQ" name="setDownPublisher" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_II3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the down publisher.
+	 *
+	 * @param publisherDown the new down publisher
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_IY3yEeSFzLw_bxO_AQ" name="publisherDown" type="_6SiTMo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_Io3yEeSFzLw_bxO_AQ" name="setDownSubscriber" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_I43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the down subscriber.
+	 *
+	 * @param subscriberDown the new down subscriber
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_JI3yEeSFzLw_bxO_AQ" name="subscriberDown" type="_6SiTN43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_JY3yEeSFzLw_bxO_AQ" name="setUpSubscriber" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_Jo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the up subscriber.
+	 *
+	 * @param subscriberUp the new up subscriber
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_J43yEeSFzLw_bxO_AQ" name="subscriberUp" type="_6SiTN43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_KY3yEeSFzLw_bxO_AQ" name="createRequesters" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_Ko3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Creates the requesters.
+	 *
+	 * @param connectionType the connection type
+	 * @param connectionString the connection string
+	 * @param capacity the capacity
+	 * @param increaseDynamically the increase dynamically
+	 * @param connect the connect
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_K43yEeSFzLw_bxO_AQ" name="connectionType" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_LI3yEeSFzLw_bxO_AQ" name="connectionString" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_LY3yEeSFzLw_bxO_AQ" name="capacity" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_Lo3yEeSFzLw_bxO_AQ" name="increaseDynamically" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_L43yEeSFzLw_bxO_AQ" name="connect" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_MI3yEeSFzLw_bxO_AQ" name="setReplier" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_MY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the replier.
+	 *
+	 * @param replier the new replier
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_Mo3yEeSFzLw_bxO_AQ" name="replier" type="_6SrdKI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_M43yEeSFzLw_bxO_AQ" name="setUpAsyncThreadCount" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_NI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the up async thread count.
+	 *
+	 * @param upAsyncThreadCount the new up async thread count
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_NY3yEeSFzLw_bxO_AQ" name="upAsyncThreadCount" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_No3yEeSFzLw_bxO_AQ" name="setDownAsyncThreadCount" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_N43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the down async thread count.
+	 *
+	 * @param downAsyncThreadCount the new down async thread count
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_OI3yEeSFzLw_bxO_AQ" name="downAsyncThreadCount" type="_6SrdLY3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_OY3yEeSFzLw_bxO_AQ" name="setUpAsyncThreadPoolFactory" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_Oo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the up async thread pool factory.
+	 *
+	 * @param upAsyncThreadFactory the new up async thread pool factory
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_O43yEeSFzLw_bxO_AQ" name="upAsyncThreadFactory" type="_6S1OIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_PI3yEeSFzLw_bxO_AQ" name="setDownAsyncThreadPoolFactory" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_PY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the down async thread pool factory.
+	 *
+	 * @param downAsyncThreadFactory the new down async thread pool factory
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_Po3yEeSFzLw_bxO_AQ" name="downAsyncThreadFactory" type="_6S1OIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_P43yEeSFzLw_bxO_AQ" name="setSyncHandlerRealtime" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_QI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Sets the sync handler realtime.
+	 *
+	 * @param isRealtime the new sync handler realtime
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_QY3yEeSFzLw_bxO_AQ" name="isRealtime" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_Q43yEeSFzLw_bxO_AQ" name="putSyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_RI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Put sync activity.
+	 *
+	 * @param topic the topic
+	 * @param activity the activity
+	 * @param runPeriodically the run periodically
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_RY3yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_Ro3yEeSFzLw_bxO_AQ" name="activity" type="_6S-_Qo3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_R43yEeSFzLw_bxO_AQ" name="runPeriodically" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6S-_SI3yEeSFzLw_bxO_AQ" name="getSyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6S-_SY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Gets the sync activity.
+	 *
+	 * @param topic the topic
+	 * @return the sync activity
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_So3yEeSFzLw_bxO_AQ" type="_6S-_Qo3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6S-_S43yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJEI3yEeSFzLw_bxO_AQ" name="putUpAsyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJEY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Put up async activity.
+	 *
+	 * @param topic the topic
+	 * @param activity the activity
+	 * @param runPeriodically the run periodically
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJEo3yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJE43yEeSFzLw_bxO_AQ" name="activity" type="_6S-_Qo3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJFI3yEeSFzLw_bxO_AQ" name="runPeriodically" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJFY3yEeSFzLw_bxO_AQ" name="getUpAsyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJFo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Gets the up async activity.
+	 *
+	 * @param topic the topic
+	 * @return the up async activity
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJF43yEeSFzLw_bxO_AQ" type="_6S-_Qo3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJGI3yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJGY3yEeSFzLw_bxO_AQ" name="putDownAsyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJGo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Put down async activity.
+	 *
+	 * @param topic the topic
+	 * @param activity the activity
+	 * @param runPeriodically the run periodically
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJG43yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJHI3yEeSFzLw_bxO_AQ" name="activity" type="_6S-_Qo3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJHY3yEeSFzLw_bxO_AQ" name="runPeriodically" type="_6S1OJ43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJHo3yEeSFzLw_bxO_AQ" name="getDownAsyncActivity" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJH43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Gets the down async activity.
+	 *
+	 * @param topic the topic
+	 * @return the down async activity
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJII3yEeSFzLw_bxO_AQ" type="_6S-_Qo3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJIY3yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJI43yEeSFzLw_bxO_AQ" name="putToDatabase" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJJI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Put to database.
+	 *
+	 * @param key the key
+	 * @param value the value
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJJY3yEeSFzLw_bxO_AQ" name="key" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJJo3yEeSFzLw_bxO_AQ" name="value" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJJ43yEeSFzLw_bxO_AQ" name="getFromDatabase" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJKI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Gets the from database.
+	 *
+	 * @param key the key
+	 * @return the from database
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJKY3yEeSFzLw_bxO_AQ" type="_6TIJIo3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJKo3yEeSFzLw_bxO_AQ" name="key" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJK43yEeSFzLw_bxO_AQ" name="clearDatabase" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJLI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Clear database.
+	 </body>
+                </ownedComment>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJLY3yEeSFzLw_bxO_AQ" name="removeFromDatabase" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJLo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Removes the from database.
+	 *
+	 * @param key the key
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJL43yEeSFzLw_bxO_AQ" name="key" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJMI3yEeSFzLw_bxO_AQ" name="isDatabaseContainsValue" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJMY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Checks if is database contains value.
+	 *
+	 * @param value the value
+	 * @return true, if is database contains value
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJMo3yEeSFzLw_bxO_AQ" type="_6S1OJ43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJM43yEeSFzLw_bxO_AQ" name="value" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TIJNI3yEeSFzLw_bxO_AQ" name="isDatabaseContainsKey" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TIJNY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Checks if is database contains key.
+	 *
+	 * @param key the key
+	 * @return true, if is database contains key
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJNo3yEeSFzLw_bxO_AQ" type="_6S1OJ43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TIJN43yEeSFzLw_bxO_AQ" name="key" type="_6TIJIo3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TR6EI3yEeSFzLw_bxO_AQ" name="isDatabaseEmpty" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TR6EY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Checks if is database empty.
+	 *
+	 * @return true, if is database empty
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TR6Eo3yEeSFzLw_bxO_AQ" type="_6S1OJ43yEeSFzLw_bxO_AQ" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TR6FI3yEeSFzLw_bxO_AQ" name="request" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TR6FY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Request.
+	 *
+	 * @param bundle the bundle
+	 * @return the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TR6Fo3yEeSFzLw_bxO_AQ" type="_6TR6E43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TR6F43yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6TR6GI3yEeSFzLw_bxO_AQ" name="Device" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_6TR6GY3yEeSFzLw_bxO_AQ">
+                <body>
+ * The Class Device.
+ </body>
+              </ownedComment>
+              <generalization xmi:type="uml:Generalization" xmi:id="_6TR6Go3yEeSFzLw_bxO_AQ" general="_6SPYQY3yEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TR6G43yEeSFzLw_bxO_AQ" name="init" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TR6HI3yEeSFzLw_bxO_AQ" name="publishUp" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TR6HY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish up.
+	 *
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TR6Ho3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TR6H43yEeSFzLw_bxO_AQ" name="publishDown" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TR6II3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish down.
+	 *
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TR6IY3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6TbrEI3yEeSFzLw_bxO_AQ" name="Manager" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrEY3yEeSFzLw_bxO_AQ">
+                <body>
+ * The Class Manager.
+ </body>
+              </ownedComment>
+              <generalization xmi:type="uml:Generalization" xmi:id="_6TbrEo3yEeSFzLw_bxO_AQ" general="_6SPYQY3yEeSFzLw_bxO_AQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_6TbrFo3yEeSFzLw_bxO_AQ" name="subscribedTopics" visibility="private" type="_6TbrFY3yEeSFzLw_bxO_AQ" isUnique="false">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrF43yEeSFzLw_bxO_AQ">
+                  <body> The subscribed topics. </body>
+                </ownedComment>
+              </ownedAttribute>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6TbrFI3yEeSFzLw_bxO_AQ" name="Manager implements ActivitiesCompletionListener" client="_6TbrEI3yEeSFzLw_bxO_AQ" supplier="_6TbrE43yEeSFzLw_bxO_AQ" contract="_6TbrE43yEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrGI3yEeSFzLw_bxO_AQ" name="init" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrGY3yEeSFzLw_bxO_AQ" name="publish" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrGo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish.
+	 *
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrG43yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrHI3yEeSFzLw_bxO_AQ" name="publishWithResult" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrHY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish with result.
+	 *
+	 * @param activity the activity
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrHo3yEeSFzLw_bxO_AQ" name="activity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrH43yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrII3yEeSFzLw_bxO_AQ" name="register" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrIY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Register.
+	 *
+	 * @param activity the activity
+	 * @param bundle the bundle
+	 * @return the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrIo3yEeSFzLw_bxO_AQ" type="_6TR6E43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrI43yEeSFzLw_bxO_AQ" name="activity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrJI3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrJY3yEeSFzLw_bxO_AQ" name="registerWithoutResult" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrJo3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Register without result.
+	 *
+	 * @param activity the activity
+	 * @param bundle the bundle
+	 * @return the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrJ43yEeSFzLw_bxO_AQ" type="_6TR6E43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrKI3yEeSFzLw_bxO_AQ" name="activity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrKY3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrKo3yEeSFzLw_bxO_AQ" name="unregister" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrK43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Unregister.
+	 *
+	 * @param activity the activity
+	 * @param bundle the bundle
+	 * @return the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrLI3yEeSFzLw_bxO_AQ" type="_6TR6E43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrLY3yEeSFzLw_bxO_AQ" name="activity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrLo3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrL43yEeSFzLw_bxO_AQ" name="unregisterWithoutResult" visibility="protected">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrMI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Unregister without result.
+	 *
+	 * @param activity the activity
+	 * @param bundle the bundle
+	 * @return the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrMY3yEeSFzLw_bxO_AQ" type="_6TR6E43yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrMo3yEeSFzLw_bxO_AQ" name="activity" type="_6SYiM43yEeSFzLw_bxO_AQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrM43yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrNI3yEeSFzLw_bxO_AQ" name="subscribe" visibility="private">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6TbrNY3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Subscribe.
+	 *
+	 * @param topic the topic
+	 * @return the int
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrNo3yEeSFzLw_bxO_AQ" type="_6SrdLY3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6TbrN43yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6TbrOI3yEeSFzLw_bxO_AQ" name="unsubscribe" visibility="private">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6Tk1AI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Unsubscribe.
+	 *
+	 * @param topic the topic
+	 * @return the int
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Tk1AY3yEeSFzLw_bxO_AQ" type="_6SrdLY3yEeSFzLw_bxO_AQ" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Tk1Ao3yEeSFzLw_bxO_AQ" name="topic" type="_6S-_KI3yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1A43yEeSFzLw_bxO_AQ" name="onActivitiesCompletion" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1BI3yEeSFzLw_bxO_AQ" name="onCreate" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1BY3yEeSFzLw_bxO_AQ" name="onStart" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Bo3yEeSFzLw_bxO_AQ" name="onResume" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1B43yEeSFzLw_bxO_AQ" name="onPause" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1CI3yEeSFzLw_bxO_AQ" name="onStop" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1CY3yEeSFzLw_bxO_AQ" name="onRestart" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Co3yEeSFzLw_bxO_AQ" name="onDestroy" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6Tk1C43yEeSFzLw_bxO_AQ" name="Service" isAbstract="true">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_6Tk1DI3yEeSFzLw_bxO_AQ">
+                <body>
+ * The Class Service.
+ </body>
+              </ownedComment>
+              <generalization xmi:type="uml:Generalization" xmi:id="_6Tk1DY3yEeSFzLw_bxO_AQ" general="_6SPYQY3yEeSFzLw_bxO_AQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Do3yEeSFzLw_bxO_AQ" name="init" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1D43yEeSFzLw_bxO_AQ" name="publishUp" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6Tk1EI3yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish up.
+	 *
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Tk1EY3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Eo3yEeSFzLw_bxO_AQ" name="publishDown" visibility="public">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_6Tk1E43yEeSFzLw_bxO_AQ">
+                  <body>
+	 * Publish down.
+	 *
+	 * @param bundle the bundle
+	 </body>
+                </ownedComment>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Tk1FI3yEeSFzLw_bxO_AQ" name="bundle" type="_6TR6E43yEeSFzLw_bxO_AQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1FY3yEeSFzLw_bxO_AQ" name="onCreate" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Fo3yEeSFzLw_bxO_AQ" name="onStart" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1F43yEeSFzLw_bxO_AQ" name="onResume" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1GI3yEeSFzLw_bxO_AQ" name="onPause" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1GY3yEeSFzLw_bxO_AQ" name="onStop" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1Go3yEeSFzLw_bxO_AQ" name="onRestart" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_6Tk1G43yEeSFzLw_bxO_AQ" name="onDestroy" visibility="public"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_6SYiMo3yEeSFzLw_bxO_AQ" name="activity">
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SYiM43yEeSFzLw_bxO_AQ" name="ApplicationActivity"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SrdMo3yEeSFzLw_bxO_AQ" name="ActivityHandler"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6S-_Qo3yEeSFzLw_bxO_AQ" name="Activity"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_6TbrE43yEeSFzLw_bxO_AQ" name="ActivitiesCompletionListener"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_6SiTMY3yEeSFzLw_bxO_AQ" name="middleware">
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SiTMo3yEeSFzLw_bxO_AQ" name="MwPublisher"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SiTN43yEeSFzLw_bxO_AQ" name="MwSubscriber"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SrdKI3yEeSFzLw_bxO_AQ" name="MwReplier"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_6SrdJI3yEeSFzLw_bxO_AQ" name="util">
+            <packagedElement xmi:type="uml:Class" xmi:id="_6SrdJY3yEeSFzLw_bxO_AQ" name="Pool"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_6TR6E43yEeSFzLw_bxO_AQ" name="Bundle"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_6SPYQ43yEeSFzLw_bxO_AQ" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6SPYRI3yEeSFzLw_bxO_AQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_6SPYRY3yEeSFzLw_bxO_AQ" name="lang">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_6SPYRo3yEeSFzLw_bxO_AQ" name="Runnable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_6S-_KI3yEeSFzLw_bxO_AQ" name="String"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_6TIJIo3yEeSFzLw_bxO_AQ" name="Object"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_6SrdOY3yEeSFzLw_bxO_AQ" name="util">
+        <packagedElement xmi:type="uml:Package" xmi:id="_6SrdOo3yEeSFzLw_bxO_AQ" name="concurrent">
+          <packagedElement xmi:type="uml:Class" xmi:id="_6SrdO43yEeSFzLw_bxO_AQ" name="ConcurrentHashMap"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_6S1OIo3yEeSFzLw_bxO_AQ" name="ThreadFactory"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_6TbrFY3yEeSFzLw_bxO_AQ" name="HashMap"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_6SrdK43yEeSFzLw_bxO_AQ" name="datatype">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6SrdLI3yEeSFzLw_bxO_AQ" name="datatype">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_6SrdLY3yEeSFzLw_bxO_AQ" name="Integer"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_6S1OJ43yEeSFzLw_bxO_AQ" name="Boolean"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
